@@ -20,3 +20,13 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+//Route::get('/matchs', function () {
+//    return view('home');
+//});
+
+//Route::get('/match-live', function () {
+//    return view('home');
+//});
+
+
