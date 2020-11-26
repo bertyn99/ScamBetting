@@ -13,19 +13,22 @@
 Pour être aidé, appelez le 09-74-75-13-13
 </p>
     <header>
-        <div class="flex">
-                <ul class="contents flex-row space-x-8">
-                    <li><a href="#" class="ml-8">Accueil</a></li>
+        <div class="flex pl-5 m-2 space-x-6">
+                <ul class="contents flex-row justify-start space-x-6 ">
+                    <li><a href="#" class="">Accueil</a></li>
                     <li><a href="#">E-sports</a></li>
                     <li><a href="#">Match en live</a></li>
+                   
                 </ul>
-        </div>
-            <div>
-                <ul class="flex flex-row-reverse space-x-4 space-x-reverse">
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">S'inscrire</a></li>
+                <ul class="contents flex-row justify-end space-x-4">
+                    <li class=""><a href="#">Connexion</a></li>
+                    <li class=""><a href="#">S'inscrire</a></li>
                 </ul>
+                    
+
+        
         </div>
+            
 
     </header>
 
