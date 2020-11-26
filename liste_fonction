@@ -1,0 +1,25 @@
+Gestion des utilisateurs :
+- Systeme d'authentification
+       - Connexion
+       - Deconnexion
+       - Inscription
+       - Modifier infos user
+- Systeme d'administration
+       - Gestion des rôles
+       - Dashboard (Admin et User)
+
+Gestion argent : 
+- Créer un porte monnaie virtuel
+       - Ajout / retrait d'argent via formulaire + envoie facture
+       - Historique de transaction (notification)
+       - Mettre a jour les gains / pertes
+       - Dashboard suivi financier utilisateur
+
+- Evolution financière du site
+       - Schéma gain / perte du site
+       - Résumé match par match 
+
+Paris :
+- Création Modification Cloture d'un paris (Faker en random)
+- Algorithme de cote (évolue en fonction des mises)
+- Paris en simple (si on a le temps combiné / multiple)
