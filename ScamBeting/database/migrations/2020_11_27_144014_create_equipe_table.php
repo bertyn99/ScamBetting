@@ -20,7 +20,6 @@ class CreateEquipeTable extends Migration
 
             $table->foreign('id_jeu')->references('id')->on('jeu');
 });
-        });
     }
 
     /**
