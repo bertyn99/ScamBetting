@@ -15,7 +15,7 @@ class CreateEquipeTable extends Migration
     {
         Schema::create('equipe', function (Blueprint $table) {
             $table->id();
-            $table->string(nom_equipe);
+            $table->string('nom_equipe');
             $table->foreignId('id_jeu');
 
             $table->foreign('id_jeu')->references('id')->on('jeu');
