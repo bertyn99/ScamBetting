@@ -1,6 +1,6 @@
 @extends('admin.admin')
 
-@section('index')
+@section('equipe')
 <div class="h-full w-64 rounded bg-gray-400">
     @foreach ($equipe as $equipes)
         <div class="text-gray-100 p-2">

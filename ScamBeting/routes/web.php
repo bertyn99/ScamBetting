@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\EquipeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,13 +23,13 @@ Route::get('/login', function () {
 });
 
 Auth::routes();
-Route::get('admin/routes', [HomeController::class, 'admin'])->middleware('admin');
+Route::get('admin', [HomeController::class, 'admin'])->middleware('admin');
 
 # CRUD EQUIPE
 Route::get('admin/equipe', [EquipeController::class, 'index'])->middleware('admin');
-Route::get('admin/equipe', [EquipeController::class, 'create'])->middleware('admin');
-Route::get('admin/equipe', [EquipeController::class, 'edit'])->middleware('admin');
-Route::get('admin/equipe', [EquipeController::class, 'destroy'])->middleware('admin');
+Route::get('admin/equipe/create', [EquipeController::class, 'create'])->middleware('admin');
+Route::put('admin/equipe', [EquipeController::class, 'edit'])->middleware('admin');
+Route::delete('admin/equipe', [EquipeController::class, 'destroy'])->middleware('admin');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 

@@ -6,6 +6,7 @@
     <div class="h-12 bg-purple-300 "> vous etes un admin</div>
 </div>
 
-@yield('equipe')
+
 
 @endsection
+@yield('equipe')
