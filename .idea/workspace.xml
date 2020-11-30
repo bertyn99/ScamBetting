@@ -20,17 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9b10298-2396-4a34-9e57-281fae2b4452" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ScamBeting/resources/views/accueil.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScamBeting/database/migrations/2020_11_27_140241_create_jeu_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/database/migrations/2020_11_27_140241_create_jeu_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScamBeting/database/migrations/2020_11_27_144014_create_equipe_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/database/migrations/2020_11_27_144014_create_equipe_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +186,8 @@
       <updated>1605882854082</updated>
       <workItem from="1605882861187" duration="4627000" />
       <workItem from="1606393286368" duration="5990000" />
-      <workItem from="1606400533787" duration="1146000" />
+      <workItem from="1606400533787" duration="3268000" />
+      <workItem from="1606480414453" duration="4814000" />
     </task>
     <servers />
   </component>
