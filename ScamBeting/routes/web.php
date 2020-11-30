@@ -16,11 +16,19 @@ use \App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('accueil');
 });
+
 Route::get('/login', function () {
     return view('accueil');
 });
 
 Auth::routes();
 Route::get('admin/routes', [HomeController::class, 'admin'])->middleware('admin');
+
+# CRUD EQUIPE
+Route::get('admin/equipe', [EquipeController::class, 'index'])->middleware('admin');
+Route::get('admin/equipe', [EquipeController::class, 'create'])->middleware('admin');
+Route::get('admin/equipe', [EquipeController::class, 'edit'])->middleware('admin');
+Route::get('admin/equipe', [EquipeController::class, 'destroy'])->middleware('admin');
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
