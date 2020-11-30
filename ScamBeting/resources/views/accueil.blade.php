@@ -20,11 +20,19 @@ Pour être aidé, appelez le 09-74-75-13-13
                     <li><a href="#">Match en live</a></li>
                    
                 </ul>
-                <ul class="contents flex-row justify-end space-x-4">
-                    <li class=""><a href="#">Connexion</a></li>
-                    <li class=""><a href="#">S'inscrire</a></li>
-                </ul>
-                    
+                @if(Route::has('login'))
+                    <div class="contents flex-row justify-end space-x-4">
+                        @auth
+                            <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
+                        @else
+                            <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
+                
 
         
         </div>

@@ -16,6 +16,9 @@ use \App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('accueil');
 });
+Route::get('/login', function () {
+    return view('accueil');
+});
 
 Auth::routes();
 Route::get('admin/routes', [HomeController::class, 'admin'])->middleware('admin');
