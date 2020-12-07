@@ -5,7 +5,7 @@
 <div class="h-full w-64 rounded bg-gray-400">
     @foreach ($equipes as $equipe)
     <div class="text-gray-100 p-2">
-        {{$equipe->nom_equipe}}
+       <a href="{{ route('equipe.edit',['id'=>$equipe->id]) }}">{{$equipe->nom_equipe}}</a>
     </div>
     @endforeach
 </div>
