@@ -9,8 +9,8 @@ class Equipe extends Model
 {
     use HasFactory;
 
-    protected $table = 'Equipe';
-        /**
+    protected $table = 'equipe';
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -19,6 +19,4 @@ class Equipe extends Model
         'nom_equipe',
         'id_jeu'
     ];
-
-    
 }

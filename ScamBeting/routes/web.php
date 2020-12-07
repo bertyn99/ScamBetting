@@ -26,12 +26,11 @@ Auth::routes();
 Route::get('admin', [HomeController::class, 'admin'])->middleware('admin');
 
 # CRUD EQUIPE
-Route::get('admin/equipe', [EquipeController::class, 'index'])->middleware('admin');
-Route::get('admin/equipe/create', [EquipeController::class, 'create'])->middleware('admin');
-Route::post('admin/equipe', [EquipeController::class, 'store'])->middleware('admin');
-Route::put('admin/equipe', [EquipeController::class, 'edit'])->middleware('admin');
-Route::put('admin/equipe/{id}/update', [EquipeController::class, 'update'])->middleware('admin');
-Route::delete('admin/equipe', [EquipeController::class, 'destroy'])->middleware('admin');
+Route::get('admin/equipe', [EquipeController::class, 'index'])->middleware('admin')->name("equipe.index");
+Route::get('admin/equipe/create', [EquipeController::class, 'create'])->middleware('admin')->name("equipe.create");
+Route::post('admin/equipe', [EquipeController::class, 'store'])->middleware('admin')->name("equipe.store");
+Route::put('admin/equipe', [EquipeController::class, 'edit'])->middleware('admin')->name("equipe.edit");
+Route::put('admin/equipe/{id}/update', [EquipeController::class, 'update'])->middleware('admin')->name("equipe.update");
+Route::delete('admin/equipe', [EquipeController::class, 'destroy'])->middleware('admin')->name("equipe.destroy");
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
