@@ -38,9 +38,9 @@ class EquipeController extends Controller
     {
         $equipes = new Equipe();
         $equipes->nom_equipe = $request->get('nom_equipe');
-        $equipes->id_jeu = $request->get('id_jeu');
+        $equipes->id_jeu = $request->get('idJeu');
         $equipes->save();
-        return redirect()->route('admin.index');
+        return redirect()->route('equipe.index');
     }
 
     /**
@@ -52,7 +52,7 @@ class EquipeController extends Controller
     public function edit($id)
     {
         $equipe = Equipe::find($id);
-        return view('admin.equipe',compact('equipe'));
+        return view('admin.equipe.edit',compact('equipe'));
     }
 
     /**
@@ -65,10 +65,10 @@ class EquipeController extends Controller
     public function update(Request $request, $id)
     {
         $equipe = Equipe::find($id);
-        $equipes->nom_equipe = $request->get('nom_equipe');
-        $equipes->id_jeu = $request->get('id_jeu');
-        $equipes->save();
-        return redirect()->route('admin.index');
+        $equipe->nom_equipe = $request->get('nom_equipe');
+        $equipe->id_jeu = $request->get('idJeu');
+        $equipe->save();
+        return redirect()->route('equipe.index');
     }
 
     /**

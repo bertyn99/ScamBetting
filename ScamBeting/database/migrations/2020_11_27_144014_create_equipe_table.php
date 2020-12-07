@@ -17,7 +17,7 @@ class CreateEquipeTable extends Migration
             $table->id();
             $table->string('nom_equipe');
             $table->foreignId('id_jeu');
-
+            $table->timestamps();
             $table->foreign('id_jeu')->references('id')->on('jeu');
 });
     }
