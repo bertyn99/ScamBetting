@@ -19,7 +19,7 @@
             <div class="w-full p-6">
                 @if(auth()->user()->isAdmin==1)
                 <p class="text-gray-700">
-                    You are logged in in <a href="{{url('admin')}}">Admin</a>
+                    You are logged in in <a href="{{url('admin/equipe')}}">Admin</a>
                 </p>
                 @else
                 <p class="text-gray-700">
