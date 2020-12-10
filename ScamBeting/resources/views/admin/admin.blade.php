@@ -10,5 +10,5 @@
 @yield('equipe')
 
 @yield('jeu')
-
+@yield('bet')
 @endsection

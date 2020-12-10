@@ -11,7 +11,7 @@
     
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <title>Create </title>
+    <title>Create Paris</title>
 </head>
 <body>
     <header class="bg-blue-900 py-6">
