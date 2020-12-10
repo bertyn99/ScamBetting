@@ -7,7 +7,8 @@
 </div>
 
 
-@yield('equipe');
+@yield('equipe')
 
+@yield('jeu')
 
 @endsection
