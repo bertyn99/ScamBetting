@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\EquipeController;
+use \App\Http\Controllers\JeuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,14 @@ Route::get('admin/equipe/create', [EquipeController::class, 'create'])->middlewa
 Route::post('admin/equipe', [EquipeController::class, 'store'])->middleware('admin')->name("equipe.store");
 Route::get('admin/equipe/{id}/edit', [EquipeController::class, 'edit'])->middleware('admin')->name("equipe.edit");
 Route::put('admin/equipe/{id}/update', [EquipeController::class, 'update'])->middleware('admin')->name("equipe.update");
-Route::delete('admin/equipe', [EquipeController::class, 'destroy'])->middleware('admin')->name("equipe.destroy");
+Route::get('admin/equipe', [EquipeController::class, 'destroy'])->middleware('admin')->name("equipe.destroy");
+
+#CRUD JEU
+Route::get('admin/jeu', [JeuController::class, 'index'])->middleware('admin')->name("jeu.index");
+Route::get('admin/jeu/create', [JeuController::class, 'create'])->middleware('admin')->name("jeu.create");
+Route::post('admin/jeu', [JeuController::class, 'store'])->middleware('admin')->name("jeu.store");
+Route::get('admin/jeu/{id}/edit', [JeuController::class, 'edit'])->middleware('admin')->name("jeu.edit");
+Route::put('admin/jeu/{id}/update', [JeuController::class, 'update'])->middleware('admin')->name("jeu.update");
+Route::get('admin/jeu/{id}/delete', [JeuController::class, 'destroy'])->middleware('admin')->name("jeu.destroy");
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
