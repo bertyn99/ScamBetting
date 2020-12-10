@@ -20,7 +20,7 @@ class CreateParisTable extends Migration
             $table->foreignId('id_equipe_2');
             $table->float('cote_1', 2, 2);
             $table->float('cote_2', 2, 2);
-
+            $table->timestamps();
             $table->foreign('id_equipe_1')->references('id')->on('equipe');
             $table->foreign('id_equipe_2')->references('id')->on('equipe');
         });
