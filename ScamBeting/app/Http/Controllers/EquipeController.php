@@ -81,6 +81,6 @@ class EquipeController extends Controller
     {
         $equipe = Equipe::find($id);
         $equipe->delete();
-        return redirect()->route('admin.index');
+        return redirect()->route('equipe.index');
     }
 }
