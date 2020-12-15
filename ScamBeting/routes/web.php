@@ -27,6 +27,7 @@ Route::get('/login', function () {
 Auth::routes();
 Route::get('admin', [HomeController::class, 'admin'])->middleware('admin');
 
+
 # CRUD EQUIPE
 Route::get('admin/equipe', [EquipeController::class, 'index'])->middleware('admin')->name("equipe.index");
 Route::get('admin/equipe/create', [EquipeController::class, 'create'])->middleware('admin')->name("equipe.create");
