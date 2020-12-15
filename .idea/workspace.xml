@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9b10298-2396-4a34-9e57-281fae2b4452" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/database/migrations/2020_11_27_140241_create_jeu_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/database/migrations/2020_11_27_140241_create_jeu_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScamBeting/database/migrations/2020_11_27_144014_create_equipe_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ScamBeting/database/migrations/2020_11_27_144014_create_equipe_table.php" afterDir="false" />
-    </list>
+    <list default="true" id="f9b10298-2396-4a34-9e57-281fae2b4452" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,6 +184,7 @@
       <workItem from="1606393286368" duration="5990000" />
       <workItem from="1606400533787" duration="3268000" />
       <workItem from="1606480414453" duration="4814000" />
+      <workItem from="1606923007410" duration="189000" />
     </task>
     <servers />
   </component>

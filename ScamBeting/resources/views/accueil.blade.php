@@ -13,31 +13,8 @@
 Pour être aidé, appelez le 09-74-75-13-13
 </p>
     <header>
-        <div class="flex pl-5 m-2 space-x-6">
-                <ul class="contents flex-row justify-start space-x-6 ">
-                    <li><a href="#" class="">Accueil</a></li>
-                    <li><a href="#">E-sports</a></li>
-                    <li><a href="#">Match en live</a></li>
-                   
-                </ul>
-                @if(Route::has('login'))
-                    <div class="contents flex-row justify-end space-x-4">
-                        @auth
-                            <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
-                        @else
-                            <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-                
-
+        @yield('navbar')
         
-        </div>
-            
-
     </header>
 
 

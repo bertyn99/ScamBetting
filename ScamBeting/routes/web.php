@@ -17,7 +17,7 @@ use \App\Http\Controllers\ParisController;
 */
 
 Route::get('/', function () {
-    return view('accueil');
+    return view('layouts.app');
 });
 
 Route::get('/login', function () {
