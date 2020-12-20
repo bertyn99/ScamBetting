@@ -13,7 +13,7 @@ class CreateScambettingTable extends Migration
      */
     public function up()
     {
-        Schema::create('scambeting', function (Blueprint $table) {
+        Schema::create('scambetting', function (Blueprint $table) {
             $table->id();
             $table->string('balance');
             $table->timestamps();

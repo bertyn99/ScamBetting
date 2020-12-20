@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ScamBeting extends Model
+class ScamBetting extends Model
 {
     use HasFactory;
-    protected $table = 'scambeting';
+    protected $table = 'scambetting';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'balance'
-    ];
+    protected $fillable = ['balance'];
 }

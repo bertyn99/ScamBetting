@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\ScamBeting;
+use App\Models\ScamBetting;
 
 class ScamBettingSeeder extends Seeder
 {
@@ -14,6 +14,6 @@ class ScamBettingSeeder extends Seeder
      */
     public function run()
     {
-        ScamBeting::create(['balance' => '0']);
+        ScamBetting::create(['balance' => '0']);
     }
 }
