@@ -18,6 +18,7 @@ class CreateParisTable extends Migration
             $table->foreignId('id_jeu');
             $table->foreignId('id_equipe_1');
             $table->foreignId('id_equipe_2');
+            $table->dateTime('endbet');
             $table->float('cote_1', 4, 2);
             $table->float('cote_2', 4, 2);
             $table->timestamps();
