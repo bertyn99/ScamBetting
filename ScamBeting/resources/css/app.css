@@ -3,3 +3,11 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.avatar {
+    @apply h-8 w-8 rounded-full;
+}
+
+.btn-user{
+    @apply bg-gray-800 flex text-sm rounded-full;
+}
