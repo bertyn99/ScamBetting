@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Equipe;
+use App\Models\ScamBetting;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminSeeder::class,
             JeuSeeder::class,
-            EquipeSeeder::class
+            EquipeSeeder::class,
+            ScamBettingSeeder::class
         ]);
     }
 }
