@@ -5,7 +5,8 @@
     }
 </style>
 
-@if(Route::has('login'))
+<header>
+<!-- @if(Route::has('login'))
     <div class="contents flex-row justify-end space-x-4">
         @auth
             <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
@@ -16,7 +17,7 @@
         @endif
         @endauth
     </div>
-@endif
+@endif -->
 <nav class="bg-white shadow">
         <div class="container mx-auto px-6 py-3">
             <div class="flex flex-col md:flex-row md:justify-between md:items-center">
@@ -84,4 +85,4 @@
             </div>
         </div>
     </nav>
-    
+</header>
