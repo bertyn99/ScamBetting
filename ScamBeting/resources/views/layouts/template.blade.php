@@ -1,12 +1,13 @@
 <style>
     .scroll-hidden::-webkit-scrollbar {
         height: 0px;
-        background: transparent; /* make scrollbar transparent */
+        background: transparent;
+        /* make scrollbar transparent */
     }
 </style>
 
 <header>
-<!-- @if(Route::has('login'))
+    <!-- @if(Route::has('login'))
     <div class="contents flex-row justify-end space-x-4">
         @auth
             <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
@@ -18,7 +19,7 @@
         @endauth
     </div>
 @endif -->
-<nav class="bg-white shadow">
+    <nav class="bg-white shadow">
         <div class="container mx-auto px-6 py-3">
             <div class="flex flex-col md:flex-row md:justify-between md:items-center">
                 <div class="flex justify-between items-center">
@@ -54,18 +55,42 @@
                         <a class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-sm bg-gray-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))
                         <a class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-sm bg-gray-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    @endif
-                                @else
-                                    <span>{{ Auth::user()->name }}</span>
-                
-                        <a href="{{ route('logout') }}"
-                            class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-sm bg-gray-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto"
-                                       onclick="event.preventDefault();
+                        @endif
+                        @else
+                        <div class="ml-3 relative">
+                            <div>
+                                <button class="btn-user focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
+                                    <span class="sr-only">Open user menu</span>
+                                    <img class="avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                </button>
+                            </div>
+                            <!--
+                                    Profile dropdown panel, show/hide based on dropdown state.
+
+                                    Entering: "transition ease-out duration-100"
+                                    From: "transform opacity-0 scale-95"
+                                    To: "transform opacity-100 scale-100"
+                                    Leaving: "transition ease-in duration-75"
+                                    From: "transform opacity-100 scale-100"
+                                    To: "transform opacity-0 scale-95"
+                                -->
+                            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" hidden>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
+                                <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                    {{ csrf_field() }}
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <span>{{ Auth::user()->name }}</span> -->
+
+                        <!--   <a class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-sm bg-gray-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto" onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                             {{ csrf_field() }}
-                        </form>
-                    @endguest
+                        </form> -->
+                        @endguest
                     </div>
 
                     <!-- Search input on mobile screen -->
@@ -81,8 +106,14 @@
                 <a class="text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">League of Legends</a>
                 <a class="text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Valorant</a>
                 <a class="text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Rainbow 6 Siege</a>
-                
+
             </div>
         </div>
     </nav>
 </header>
+
+<script>
+    document.querySelector('.btn-user').addEventListener('click', e => {
+        document.querySelector('[aria-labelledby="user-menu"]').toggleAttribute('hidden')
+    })
+</script>
