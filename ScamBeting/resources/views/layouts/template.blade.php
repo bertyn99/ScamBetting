@@ -24,7 +24,7 @@
             <div class="flex flex-col md:flex-row md:justify-between md:items-center">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
-                        <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="#">Scam Betting</a>
+                        <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="/">Scam Betting</a>
 
                         <!-- Search input on desktop screen -->
                         <div class="mx-10 hidden md:block">
@@ -75,8 +75,14 @@
                                     To: "transform opacity-0 scale-95"
                                 -->
                             <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" hidden>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+                                @if(Auth::user()->isAdmin == 1)
+                                <a href="{{url('admin')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+
+                                @else
+                                <a href="{{url('home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+                                @endif
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{{ Auth::user()->name }} {{ Auth::user()->isAdmin }}</a>
                                 <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                     {{ csrf_field() }}

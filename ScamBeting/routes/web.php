@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\AdminController;
 use \App\Http\Controllers\EquipeController;
 use \App\Http\Controllers\JeuController;
 use \App\Http\Controllers\ParisController;
@@ -25,7 +26,7 @@ Route::get('/login', function () {
 });
 
 Auth::routes();
-Route::get('admin', [HomeController::class, 'admin'])->middleware('admin');
+Route::get('admin', [AdminController::class, 'index'])->middleware('admin');
 
 
 # CRUD EQUIPE
