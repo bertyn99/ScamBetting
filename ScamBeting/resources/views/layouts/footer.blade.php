@@ -2,53 +2,19 @@
    <!-- component -->
 <div class="h-64 bg-grey-lighter p-8">
     <div class="sm:flex mb-4">
-  <div class="sm:w-1/4 h-auto">
-      <div class="text-orange mb-2">Orange</div>
+
+  <div class="sm:w-1/2 h-auto">
+      <div class="text-orange mb-2">Jeux</div>
       <ul class="list-reset leading-normal">
-          <li class="hover:text-orange text-grey-darker">One</li>
-          <li class="hover:text-orange text-grey-darker">Two</li>
-          <li class="hover:text-orange text-grey-darker">Three</li>
-          <li class="hover:text-orange text-grey-darker">Four</li>
-          <li class="hover:text-orange text-grey-darker">Five</li>
-          <li class="hover:text-orange text-grey-darker">Six</li>
-          <li class="hover:text-orange text-grey-darker">Seven</li>
-          <li class="hover:text-orange text-grey-darker">Eight</li>
+          <li class="hover:text-orange text-grey-darker">Heartstone</li>
+          <li class="hover:text-orange text-grey-darker">Counter-Strike</li>
+          <li class="hover:text-orange text-grey-darker">League of legends</li>
+          <li class="hover:text-orange text-grey-darker">Valorant</li>
+          <li class="hover:text-orange text-grey-darker">Rainbow 6 Siege</li>
       </ul>
   </div>
-  <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-      <div class="text-blue mb-2">Blue</div>
-      <ul class="list-reset leading-normal">
-          <li class="hover:text-blue text-grey-darker">One</li>
-          <li class="hover:text-blue text-grey-darker">Two</li>
-          <li class="hover:text-blue text-grey-darker">Three</li>
-      </ul>
 
-    <div class="text-blue-light mb-2 mt-4">Blue-light</div>
-      <ul class="list-reset leading-normal">
-          <li class="hover:text-blue-light text-grey-darker">One</li>
-          <li class="hover:text-blue-light text-grey-darker">Two</li>
-          <li class="hover:text-blue-light text-grey-darker">Three</li>
-      </ul>
-
-  </div>
-  <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-            <div class="text-green-dark mb-2">Green-dark</div>
-      <ul class="list-reset leading-normal">
-          <li class="hover:text-green-dark text-grey-darker">One</li>
-          <li class="hover:text-green-dark text-grey-darker">Two</li>
-          <li class="hover:text-green-dark text-grey-darker">Three</li>
-      </ul>
-
-    <div class="text-green-light mb-2 mt-4">Green-light</div>
-      <ul class="list-reset leading-normal">
-          <li class="hover:text-green-light text-grey-darker">One</li>
-          <li class="hover:text-green-light text-grey-darker">Two</li>
-          <li class="hover:text-green-light text-grey-darker">Three</li>
-      </ul>
-
-
-  </div>
-    <div class="sm:w-1/2 sm:mt-0 mt-8 h-auto">
+    <div class="sm:w-1/2 h-auto sm:mt-0 mt-8">
         <div class="text-red-light mb-2">Newsletter</div>
         <p class="text-grey-darker leading-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consectetur. </p>
         <div class="mt-4 flex">
@@ -58,5 +24,9 @@
     </div>
 
 </div>
+<div class="text-center h-auto sm:mt-0 mt-8">
+    <p>Scam betting est un projet étudiant de paris e-sportifs fictif en ligne.</p>
 </div>
+</div>
+
 </footer>
