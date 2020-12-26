@@ -16,9 +16,10 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
+    @include('layouts.navbar')
     <div id="app">
      
-            @include('layouts.template')
+            
            <!--  <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
@@ -31,6 +32,10 @@
             </div> -->
 
         @yield('content')
-    </div>
+
+
+       
+    </div> 
+    @include('layouts.footer')
 </body>
 </html>
