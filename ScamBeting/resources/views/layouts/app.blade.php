@@ -32,7 +32,7 @@
    
     
             </div> -->
-
+        @yield('paris')
         @yield('content')
 
 
