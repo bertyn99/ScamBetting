@@ -28,7 +28,6 @@ Route::get('/login', function () {
 Auth::routes();
 Route::get('admin', [AdminController::class, 'index'])->middleware('admin');
 
-
 # CRUD EQUIPE
 Route::get('admin/equipe', [EquipeController::class, 'index'])->middleware('admin')->name("equipe.index");
 Route::get('admin/equipe/create', [EquipeController::class, 'create'])->middleware('admin')->name("equipe.create");
@@ -54,4 +53,4 @@ Route::put('admin/paris/{id}/update', [ParisController::class, 'update'])->middl
 Route::get('admin/paris/{id}/delete', [ParisController::class, 'destroy'])->middleware('admin')->name("bet.destroy");
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.index');
