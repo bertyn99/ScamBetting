@@ -17,7 +17,6 @@
             </nav>
             <div class="bg-white w-full mx-auto flex flex-col items-center text-center p-2 rounded">
                 @yield('equipe')
-
                 @yield('jeu')
                 @yield('bet')
             </div>
