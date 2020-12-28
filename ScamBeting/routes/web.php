@@ -17,9 +17,11 @@ use \App\Http\Controllers\ParisController;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('layouts.app');
-});
+})->name('home'); */
+
+Route::get('/', [ParisController::class, 'list'])->name('home');
 
 Route::get('/login', function () {
     return view('accueil');
