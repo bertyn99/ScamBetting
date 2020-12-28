@@ -21,7 +21,7 @@ class Equipe extends Model
     ];
     public function jeu()
     {
-        return $this->belongsTo(Jeu::class);
+        return $this->belongsTo(Jeu::class, 'id_jeu');
     }
     public function paris()
     {

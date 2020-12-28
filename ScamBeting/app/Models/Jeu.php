@@ -20,7 +20,7 @@ class Jeu extends Model
     ];
     public function equipes()
     {
-        return $this->HasMany(Equipe::class);
+        return $this->HasMany(Equipe::class, 'id_jeu');
     }
     public function paris()
     {

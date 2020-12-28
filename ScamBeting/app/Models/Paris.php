@@ -23,10 +23,10 @@ class Paris extends Model
     ];
     public function jeu()
     {
-        return $this->belongsTo(Jeu::class);
+        return $this->belongsTo(Jeu::class, 'id_jeu');
     }
     public function equipe()
     {
-        return $this->belongsTo(Equipe::class);
+        return $this->belongsTo(Equipe::class, 'id_equipe');
     }
 }
