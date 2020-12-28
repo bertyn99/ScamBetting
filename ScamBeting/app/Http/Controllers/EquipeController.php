@@ -25,8 +25,8 @@ class EquipeController extends Controller
      */
     public function create()
     {
-        $category = Jeu::all();
-        return view('admin.equipe.create');
+        $jeux = Jeu::all();
+        return view('admin.equipe.create', compact('jeux'));
     }
 
     /**
@@ -53,7 +53,8 @@ class EquipeController extends Controller
     public function edit($id)
     {
         $equipe = Equipe::find($id);
-        return view('admin.equipe.edit', compact('equipe'));
+        $jeux = Jeu::all();
+        return view('admin.equipe.edit', compact('equipe', 'jeux'));
     }
 
     /**
