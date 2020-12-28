@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jeu extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'jeu';
     /**
      * The attributes that are mass assignable.
@@ -18,4 +18,8 @@ class Jeu extends Model
     protected $fillable = [
         'nom_jeu'
     ];
+    public function equipes()
+    {
+        return $this->HasMany(Equipe::class);
+    }
 }

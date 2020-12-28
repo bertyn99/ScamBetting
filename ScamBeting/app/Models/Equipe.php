@@ -19,4 +19,8 @@ class Equipe extends Model
         'nom_equipe',
         'id_jeu'
     ];
+    public function jeu()
+    {
+        return $this->belongsTo(Jeu::class);
+    }
 }
