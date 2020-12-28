@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipe;
-use App\Models\Jeu;
+
 use Illuminate\Http\Request;
-use App\Models\Paris;
+use App\Models\{Paris, Equipe, Jeu};
 
 class ParisController extends Controller
 {
@@ -29,8 +28,10 @@ class ParisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list($slug = null)
     {
+        $query = $slug ? Jeu::whereSlug($slug)->firstOrFail()->paris() : Paris::query();
+        /* $betfs = $query->withTrashed()->paginate(5); */
         $jeux = Jeu::all();
         $equipes = Equipe::all();
         $bets = Paris::all();
@@ -84,6 +85,9 @@ class ParisController extends Controller
 
     public function show($id)
     {
+        $bet = Paris::find($id);
+        $category = $bet->jeu->nom_jeu;
+        return view('paris.bet', compact('bet', 'category'));
     }
     /**
      * Update the specified resource in storage.
