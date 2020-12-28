@@ -11,7 +11,7 @@ class ParisController extends Controller
 {
     //<?php
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource in admin panel.
      *
      * @return \Illuminate\Http\Response
      */
@@ -22,6 +22,21 @@ class ParisController extends Controller
         $bets = Paris::all();
         return view('admin.paris.index', compact('bets', 'jeux', 'equipes'));
     }
+
+    //<?php
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function list()
+    {
+        $jeux = Jeu::all();
+        $equipes = Equipe::all();
+        $bets = Paris::all();
+        return view('layouts.app', compact('bets'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -66,6 +81,10 @@ class ParisController extends Controller
         return view('admin.jeu.edit', compact('bet'));
     }
 
+
+    public function show($id)
+    {
+    }
     /**
      * Update the specified resource in storage.
      *
