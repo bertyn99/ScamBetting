@@ -32,15 +32,15 @@
    
     
             </div> -->
-            tets
-       @if(Route::currentRouteName() == 'home')
-       
-            @include('layouts.paris.bet')
-    @else
-  
-@yield('content')
-       @endif
-        
+        tets
+        @if(Route::currentRouteName() == 'home')
+
+        @include('paris.bet')
+        @else
+
+        @yield('content')
+        @endif
+
 
 
 
