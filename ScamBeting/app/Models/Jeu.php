@@ -22,4 +22,8 @@ class Jeu extends Model
     {
         return $this->HasMany(Equipe::class);
     }
+    public function paris()
+    {
+        return $this->HasMany(Paris::class);
+    }
 }

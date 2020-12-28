@@ -23,4 +23,8 @@ class Equipe extends Model
     {
         return $this->belongsTo(Jeu::class);
     }
+    public function paris()
+    {
+        return $this->HasMany(Paris::class);
+    }
 }

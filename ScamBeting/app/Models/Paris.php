@@ -21,4 +21,12 @@ class Paris extends Model
         'cote_1',
         'cote_2'
     ];
+    public function jeu()
+    {
+        return $this->belongsTo(Jeu::class);
+    }
+    public function equipe()
+    {
+        return $this->belongsTo(Equipe::class);
+    }
 }
