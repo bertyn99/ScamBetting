@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Equipe;
+use App\Models\{Equipe, Jeu};
 
 class EquipeController extends Controller
 {
@@ -25,6 +25,7 @@ class EquipeController extends Controller
      */
     public function create()
     {
+        $category = Jeu::all();
         return view('admin.equipe.create');
     }
 
@@ -52,7 +53,7 @@ class EquipeController extends Controller
     public function edit($id)
     {
         $equipe = Equipe::find($id);
-        return view('admin.equipe.edit',compact('equipe'));
+        return view('admin.equipe.edit', compact('equipe'));
     }
 
     /**
