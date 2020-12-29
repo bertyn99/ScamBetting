@@ -17,9 +17,12 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class=" h-screen antialiased leading-none font-sans">
+<body class="flex flex-col min-h-screen antialiased leading-none font-sans">
+    <p class="bg-gray-300 text-center h-12">Famille, vie sociale, santé financière. Etes-vous prêt à tout miser ?
+        Pour être aidé, appelez le 09-74-75-13-13
+    </p>
     @include('layouts.navbar')
-    <div id="app" class="bg-gray-50 py-4">
+    <div id="app" class="bg-gray-50 py-4 flex-grow">
 
 
         <!--  <div class="container mx-auto flex justify-between items-center px-6">
