@@ -61,7 +61,12 @@
     let jeu=document.querySelector('#jeu')
     let equipe1=document.querySelector('#equipe1')
     let equipe2=document.querySelector('#equipe2')
+    let valeur={ e:{ prev:"", cur:""},
+    e2:{prev:"", cur:""} }
+   
+   
     let equipes;
+   
     jeu.addEventListener('change',async e=>{
         if(jeu.value!=""){ 
             equipe1.options[0].text="Choissisez l'equipe 1"
@@ -72,7 +77,6 @@
         }
     })
    function updateList(list){
- console.log(list)
        //efface les autre option
     while (equipe1.options.length > 1 && equipe2.options.length > 1) {
          equipe1.remove(1); 
@@ -82,8 +86,42 @@
            equipe1[i+1]= new Option(elem.nom_equipe,elem.nom_equipe)
            equipe2[i+1]= new Option(elem.nom_equipe,elem.nom_equipe)
        }); 
-
+       
+        valeur.e.cur=equipe2.value;
+        valeur.e2.cur=equipe2.value
    }
+   equipe1.addEventListener('change',async e=>{
+   
+        valeur.e.prev=valeur.e.cur
+         valeur.e.cur=equipe1.value
+
+    
+    for (const option of equipe2) {
+           if(option.value==valeur.e.cur){
+                option.disabled=true;
+           }
+           if(option.value==valeur.e.prev){
+            option.disabled=false;
+           }
+       }
+      console.log(valeur)
+   })
+   equipe2.addEventListener('change',async e=>{ 
+   
+        valeur.e2.prev=valeur.e2.cur
+         valeur.e2.cur=equipe2.value
+
+    for (const option of equipe1) {
+           if(option.value==valeur.e.cur){
+                option.disabled=true;
+           }
+           if(option.value==valeur.e.prev){
+            option.disabled=false;
+           }
+       }
+       console.log(valeur)
+    })
+
    async function getList(slug){
        return new Promise((resolve, reject) => {
         fetch(`http://127.0.0.1:8000/api/${slug}/equipe`)
