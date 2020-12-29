@@ -16,7 +16,7 @@ class Jeu extends Model
      * @var array
      */
     protected $fillable = [
-        'nom_jeu'
+        'nom_jeu', 'slug'
     ];
     public function equipes()
     {
