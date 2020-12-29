@@ -46,6 +46,7 @@
 
     </div>
     @include('layouts.footer')
+    @stack('script')
 </body>
 
 </html>
