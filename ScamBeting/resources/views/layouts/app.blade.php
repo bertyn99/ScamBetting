@@ -35,7 +35,7 @@
         tets
         @if(Route::currentRouteName() == 'home')
 
-        @include('paris.bet')
+        @include('layouts.paris.bet')
         @else
 
         @yield('content')

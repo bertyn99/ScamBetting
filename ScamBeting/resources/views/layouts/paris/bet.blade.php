@@ -1,5 +1,6 @@
 <section>
     <div class="grid grid-cols-6 gap-2 py-2 px-5">
+    betee
         @foreach ($bets as $bet)
         <div class=" bg-white rounded flex flex-row justify-center just p-2 col-span-2 shadow">
             <div class="equipe text-center">
