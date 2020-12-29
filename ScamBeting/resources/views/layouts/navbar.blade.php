@@ -19,16 +19,16 @@
         @endauth
     </div>
 @endif -->
-    <nav class="bg-white shadow">
+    <nav class="bg-blue-500 shadow-2xl">
         <div class="container mx-auto px-6 py-3">
             <div class="flex flex-col md:flex-row md:justify-between md:items-center">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
-                        <a class="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="/">Scam Betting</a>
+                        <a class="text-white text-xl font-bold md:text-2xl hover:text-white" href="/">Scam Betting</a>
 
                         <!-- Search input on desktop screen -->
                         <div class="mx-10 hidden md:block">
-                            <input type="text" class="w-32 lg:w-64 px-4 py-3 leading-tight text-sm text-gray-700 bg-gray-100 rounded-md placeholder-gray-500 border border-transparent focus:outline-none focus:bg-white focus:shadow-outline focus:border-blue-400" placeholder="Rechercher" aria-label="Rechercher">
+                            <input type="text" class="w-32 lg:w-64 px-4 py-3 leading-tight text-sm text-white bg-gray-100 rounded-md placeholder-gray-500 border border-transparent focus:outline-none focus:bg-white focus:shadow-outline focus:border-blue-400" placeholder="Rechercher" aria-label="Rechercher">
                         </div>
                     </div>
 
@@ -45,9 +45,9 @@
                 <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
                 <div class="hidden md:flex items-center">
                     <div class="flex flex-col mt-2 md:flex-row md:mt-0 md:mx-1">
-                        <a class="my-1 text-sm text-gray-700 leading-5 hover:text-blue-600 no-underline hover:underline md:mx-4 md:my-0" href="#">Accueil</a>
-                        <a class="my-1 text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline md:mx-4 md:my-0" href="#">E-Sports</a>
-                        <a class="my-1 text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline md:mx-4 md:my-0" href="#">Match en live</a>
+                        <a class="my-1 text-sm text-white leading-5 hover:text-blue-600 no-underline hover:underline md:mx-4 md:my-0" href="#">Accueil</a>
+                        <a class="my-1 text-sm text-white leading-5 hover:text-blue-600 hover:underline md:mx-4 md:my-0" href="#">E-Sports</a>
+                        <a class="my-1 text-sm text-white leading-5 hover:text-blue-600 hover:underline md:mx-4 md:my-0" href="#">Match en live</a>
                     </div>
 
                     <div class="flex items-center py-2 -mx-1 md:mx-0">
@@ -76,14 +76,14 @@
                                 -->
                             <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" hidden>
                                 @if(Auth::user()->isAdmin == 1)
-                                <a href="{{url('admin')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+                                <a href="{{url('admin')}}" class="block px-4 py-2 text-sm text-white hover:bg-gray-100" role="menuitem">Dashboard</a>
 
                                 @else
-                                <a href="{{url('home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+                                <a href="{{url('home')}}" class="block px-4 py-2 text-sm text-white hover:bg-gray-100" role="menuitem">Dashboard</a>
                                 @endif
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-                               {{--  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{{ Auth::user()->name }} {{ Auth::user()->isAdmin }}</a> --}}
-                                <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100" role="menuitem">Settings</a>
+                               {{--  <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100" role="menuitem">{{ Auth::user()->name }} {{ Auth::user()->isAdmin }}</a> --}}
+                                <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-100" role="menuitem" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                     {{ csrf_field() }}
                                 </form>
@@ -101,17 +101,17 @@
 
                     <!-- Search input on mobile screen -->
                     <div class="mt-3 md:hidden">
-                        <input type="text" class="w-full px-4 py-3 leading-tight text-sm text-gray-700 bg-gray-100 rounded-md placeholder-gray-500 focus:outline-none focus:bg-white focus:shadow-outline" placeholder="Rechercher" aria-label="Rechercher">
+                        <input type="text" class="w-full px-4 py-3 leading-tight text-sm text-white bg-gray-100 rounded-md placeholder-gray-500 focus:outline-none focus:bg-white focus:shadow-outline" placeholder="Rechercher" aria-label="Rechercher">
                     </div>
                 </div>
             </div>
 
             <div class="mt-3 py-3 -mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
-                <a class="text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Heartsone</a>
-                <a class="text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Counter-Strike</a>
-                <a class="text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">League of Legends</a>
-                <a class="text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Valorant</a>
-                <a class="text-sm text-gray-700 leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Rainbow 6 Siege</a>
+                <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Heartsone</a>
+                <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Counter-Strike</a>
+                <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">League of Legends</a>
+                <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Valorant</a>
+                <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">Rainbow 6 Siege</a>
 
             </div>
         </div>
