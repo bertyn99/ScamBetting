@@ -1,4 +1,4 @@
-<footer class="bg-grey-500">
+<footer class="bg-grey-500 absolute inset-x-0 bottom-0">
     <!-- component -->
     <div class="h-64 p-8">
         <div class="sm:flex mb-4">
@@ -16,10 +16,10 @@
 
             <div class="sm:w-1/2 h-auto sm:mt-0 mt-8">
                 <div class="text-red-light mb-2">Newsletter</div>
-                <p class="text-grey-darker leading-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consectetur. </p>
+                <p class="text-grey-darker leading-normal">Nous allons bientot metre en place une Newsletter, sois le premier au courant !</p>
                 <div class="mt-4 flex">
                     <input type="text" class="p-2 border border-grey-light round text-grey-dark text-sm h-auto" placeholder="Your email address">
-                    <button class="bg-orange text-white rounded-sm h-auto text-xs p-3">Subscribe</button>
+                    <button class="bg-orange text-white rounded-sm h-auto text-xs p-3">S'abonner</button>
                 </div>
             </div>
 
