@@ -13,5 +13,17 @@
 }
 
 #nom-form{
-    @apply border py-2 px-3 text-grey-darkest
+    @apply border py-2 px-3 text-gray-500;
+}
+.field {
+  @apply border py-2 px-3 text-gray-600;
+}
+
+.field-label {
+  @apply uppercase font-bold text-lg mb-2 text-gray-600;
+}
+
+
+.field-group {
+  @apply flex flex-col;
 }
