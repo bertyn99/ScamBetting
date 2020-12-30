@@ -22,7 +22,7 @@
         Pour être aidé, appelez le 09-74-75-13-13
     </p>
     @include('layouts.navbar')
-    <div id="app" class="bg-gray-50 py-4 flex-grow">
+    <main id="app" class="bg-gray-100 py-4 flex-grow">
 
 
         <!--  <div class="container mx-auto flex justify-between items-center px-6">
@@ -35,7 +35,6 @@
    
     
             </div> -->
-        tets
         @if(Route::currentRouteName() == 'home')
 
         @include('layouts.paris.bet')
@@ -47,7 +46,7 @@
 
 
 
-    </div>
+    </main>
     @include('layouts.footer')
     @stack('script')
 </body>

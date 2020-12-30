@@ -11,7 +11,7 @@
 <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm lg:shadow-lg">
 </section>
 </div> --}}
-<section class="py-10 bg-gray-300">
+<section class="py-10 ">
     <div class="container mx-auto px-4">
         <div class=" flex flex-col break-words bg-white w-full mb-6 shadow-xl rounded-lg ">
             <div class="px-6">
