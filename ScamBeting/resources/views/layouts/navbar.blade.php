@@ -97,10 +97,10 @@
 
                                 @else
                                 <a href="{{url('home')}}" class="block px-4 py-2 text-sm text-white hover:bg-gray-100"
-                                    role="menuitem">Dashboard</a>
+                                    role="menuitem">Profile</a>
                                 @endif
                                 <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100"
-                                    role="menuitem">Settings</a>
+                                    role="menuitem">Parametre</a>
                                 {{--  <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100" role="menuitem">{{ Auth::user()->name }}
                                 {{ Auth::user()->isAdmin }}</a> --}}
                                 <a href="{{ route('logout') }}"

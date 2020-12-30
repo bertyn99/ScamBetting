@@ -39,7 +39,7 @@ class EquipeController extends Controller
     {
         $equipes = new Equipe();
         $equipes->nom_equipe = $request->get('nom_equipe');
-        $equipes->id_jeu = $request->get('idJeu');
+        $equipes->id_jeu = $request->jeu;
         $equipes->save();
         return redirect()->route('equipe.index');
     }

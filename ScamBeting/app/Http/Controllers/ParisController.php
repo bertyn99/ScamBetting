@@ -60,12 +60,15 @@ class ParisController extends Controller
      */
     public function store(Request $request)
     {
+
         $bet = new Paris();
         $bet->id_jeu = $request->jeu;
-        $bet->id_equipe_1 = $request->id_equipe_1;
-        $bet->id_equipe_2 = $request->id_equipe_2;
+        $bet->id_equipe_1 = $request->equipe;
+        $bet->id_equipe_2 = $request->equipe2;
         $bet->cote_1 = $request->get('cote_1');
         $bet->cote_2 = $request->get('cote_2');
+        $bet->endbet = $request->get('end-bet');
+        dd($request);
         $bet->save();
         return redirect()->route('bet.index');
     }
@@ -100,8 +103,8 @@ class ParisController extends Controller
     {
         $bet = Paris::find($id);
         $bet->id_jeu = $request->jeu;
-        $bet->id_equipe_1 = $request->id_equipe_1;
-        $bet->id_equipe_2 = $request->id_equipe_2;
+        $bet->id_equipe_1 = $request->equipe1;
+        $bet->id_equipe_2 = $request->equipe2;
         $bet->cote_1 = $request->get('cot_1');
         $bet->cote_2 = $request->get('cot_2');;
         $bet->save();

@@ -19,7 +19,8 @@ class Paris extends Model
         'id_equipe_1',
         'id_equipe_2',
         'cote_1',
-        'cote_2'
+        'cote_2',
+        'endbet'
     ];
     public function jeu()
     {
@@ -27,6 +28,6 @@ class Paris extends Model
     }
     public function equipe()
     {
-        return $this->belongsTo(Equipe::class, 'id_equipe');
+        return $this->belongsTo(Equipe::class, 'id_equipe_1', 'id_equipe_2');
     }
 }
