@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('extra-meta')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
 @section('content')
 <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
     <div class="flex">
@@ -78,7 +82,8 @@
 
                         <p class="w-full text-xs text-center text-gray-700 my-6 sm:text-sm sm:my-8">
                             {{ __('Already have an account?') }}
-                            <a class="text-blue-500 hover:text-blue-700 no-underline hover:underline" href="{{ route('login') }}">
+                            <a class="text-blue-500 hover:text-blue-700 no-underline hover:underline"
+                                href="{{ route('login') }}">
                                 {{ __('Login') }}
                             </a>
                         </p>

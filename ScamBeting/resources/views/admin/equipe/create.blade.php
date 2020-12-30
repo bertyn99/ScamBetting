@@ -1,4 +1,7 @@
 @extends('admin.admin')
+@section('extra-meta')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
 
 @section('equipe')
 <div class="flex items-center h-screen w-full bg-teal-lighter">

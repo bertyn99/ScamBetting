@@ -1,5 +1,9 @@
 @extends('admin.admin')
 
+@section('extra-meta')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
 @section('jeu')
 <div class="flex items-center h-screen w-full bg-teal-lighter">
     <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('extra-meta')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
 @section('content')
 <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
     <div class="flex">
@@ -17,7 +21,8 @@
                     {{ __('Verify Your Email Address') }}
                 </header>
 
-                <div class="w-full flex flex-wrap text-gray-700 leading-normal text-sm p-6 space-y-4 sm:text-base sm:space-y-6">
+                <div
+                    class="w-full flex flex-wrap text-gray-700 leading-normal text-sm p-6 space-y-4 sm:text-base sm:space-y-6">
                     <p>
                         {{ __('Before proceeding, please check your email for a verification link.') }}
                     </p>
