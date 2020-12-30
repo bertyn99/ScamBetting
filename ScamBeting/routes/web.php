@@ -56,5 +56,8 @@ Route::get('admin/paris/{id}/edit', [ParisController::class, 'edit'])->middlewar
 Route::put('admin/paris/{id}/update', [ParisController::class, 'update'])->middleware('admin')->name("bet.update");
 Route::get('admin/paris/{id}/delete', [ParisController::class, 'destroy'])->middleware('admin')->name("bet.destroy");
 
+#Crud Balance
+Route::get('profile/depot', [HomeController::class, 'index'])->name('profile.depot');
+Route::get('profile/retrait', [HomeController::class, 'index'])->name('profile.retrait');
 
-Route::get('/profile', [HomeController::class, 'index'])->name('profile.index');
+Route::get('profile', [HomeController::class, 'index'])->name('profile.index');
