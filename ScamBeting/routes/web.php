@@ -57,4 +57,4 @@ Route::put('admin/paris/{id}/update', [ParisController::class, 'update'])->middl
 Route::get('admin/paris/{id}/delete', [ParisController::class, 'destroy'])->middleware('admin')->name("bet.destroy");
 
 
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard.index');
+Route::get('/profile', [HomeController::class, 'index'])->name('profile.index');
