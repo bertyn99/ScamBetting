@@ -62,9 +62,9 @@ Route::get('profile/depot', [HomeController::class, 'deposit'])->name('profile.d
 Route::get('profile/retrait', [HomeController::class, 'withdraw'])->name('profile.retrait');
 
 #transaction
-Route::post('checkout/depot', [TransactionController::class, 'deposit'])->name('deposit.index');
+Route::post('checkout', [TransactionController::class, 'deposit'])->name('deposit.index');
 Route::post('checkout/depot', [TransactionController::class, 'store'])->name('deposit.store');
-
+Route::get('/merci ', [TransactionController::class, 'reussi'])->name('deposit.merci');
 
 Route::get('profile', [HomeController::class, 'index'])->name('profile.index');
 

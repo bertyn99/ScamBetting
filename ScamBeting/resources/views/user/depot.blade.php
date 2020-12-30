@@ -8,7 +8,7 @@
                 <div class="flex items-center w-full bg-teal-lighter">
                     <div class="w-full bg-grey-100 rounded shadow-lg p-8 m-4">
                         <h3 class="text-center font-bold text-gray-800 text-2xl mb-4">Dépot</h3>
-                        <form action={{ route('checkout.depot') }} class="mb-4 md:flex md:flex-wrap md:justify-between"
+                        <form action="{{ route('deposit.index') }}" class="mb-4 md:flex md:flex-wrap md:justify-between"
                             method="post">
                             @csrf
                             @method('POST')

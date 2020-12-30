@@ -12,21 +12,24 @@
     <div class="container mx-auto px-4">
         <div class=" flex flex-col break-words bg-white w-full mb-6 shadow-xl rounded-lg ">
             <div class="px-6">
-                <form id="payment-form" action="{{ route('deposit.store') }}" method="POST">
-                    @csrf
-                    @method('POST')
-                    <div id="card-element">
-                        <!-- Elements will create input elements here -->
-                    </div>
+                <div class=" w-1/2 mx-auto bg-gray-600 rounded shadow-lg p-8 m-4">
+                    <form class="mb-4 md:flex md:flex-col md:justify-between" id="payment-form"
+                        action="{{ route('deposit.store') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <div class="field-group mb-4 md:w-1/2" id="card-element">
+                            <!-- Elements will create input elements here -->
+                        </div>
 
-                    <!-- We'll put the error messages in this element -->
-                    <div id="card-errors" role="alert"></div>
+                        <!-- We'll put the error messages in this element -->
+                        <div id="card-errors" role="alert"></div>
 
-                    <button
-                        class="bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-lg px-4 py-2 rounded outline-none focus:outline-none sm:mr-4 mb-1"
-                        id="submit">Pay</button>
-                </form>
 
+                        <button
+                            class="bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-lg px-4 py-2 rounded outline-none focus:outline-none mt-2 mb-1"
+                            id="submit">Pay</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -35,7 +38,6 @@
 
 @section('extra-js')
 <script>
-    // Paiement Stripe
     var stripe =Stripe('pk_test_51I47CMHOBAAOK9170mv3kPGRTy6YqvYUDuw92ysOEW6lieID58L2HMLKu0Ouw3r8DzwFkJgwjCjAJrfR19v897S500Np6OBXwh');
     var elements = stripe.elements(); 
     var style = {
@@ -52,26 +54,29 @@
             color: "#fa755a",
             iconColor: "#fa755a"
         }
-};
-var card = elements.create("card", { style: style });
+    };
+    var card = elements.create("card", { style: style });
     card.mount("#card-element");
-    card.addEventListener('change', ({error}) => {
-    const displayError = document.getElementById('card-errors');
-        if (error) {
-            displayError.classList.add('alert', 'alert-warning', 'mt-3');
-            displayError.textContent = error.message;
-        } else {
-            displayError.classList.remove('alert', 'alert-warning', 'mt-3');
-            displayError.textContent = '';
-        }
-    });
-    var submitButton = document.getElementById('submit');
+    card.on('change', function(event) {
+  var displayError = document.getElementById('card-errors');
+    if (event.error) {
+        displayError.classList.add('alert', 'alert-warning', 'mt-3');
+        displayError.textContent = event.error.message;
+    } else {
+        displayError.classList.remove('alert', 'mt-1');
+        displayError.textContent = '';
+    }
+ });
+ var submitButton = document.getElementById('submit');
     submitButton.addEventListener('click', function(ev) {
     ev.preventDefault();
     submitButton.disabled = true;
     stripe.confirmCardPayment("{{ $clientSecret }}", {
         payment_method: {
-            card: card
+            card: card,
+            billing_details: {
+                name: "{{Auth::user()->name}}"
+            }
         }
         }).then(function(result) {
             if (result.error) {
