@@ -9,18 +9,18 @@
             @method('POST')
 
             <div class="flex flex-col mb-4">
-                <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="nom_equipe">Jeu</label>
+                <label class="field-label" for="nom_jeu">Jeu</label>
                 <select id="jeu" name="jeu" autocomplete="jeu"
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option value="">Choissisez un jeu</option>
                     @foreach ($jeux as $jeu)
-                    <option value="{{$jeu->slug}}">{{$jeu->nom_jeu}}</option>
+                    <option value="{{$jeu->id}}">{{$jeu->nom_jeu}}</option>
                     @endforeach
                 </select>
             </div>
             <div class="flex flex-col mb-4">
-                <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="nom_equipe">Equipe 1</label>
-                <select id="equipe1" name="equipe1" autocomplete="equipe1"
+                <label class="field-label" for="nom_equipe">Equipe 1</label>
+                <select id="equipe" name="equipe" autocomplete="equipe"
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option value="">Choissisez le jeu d'abord</option>
                     @foreach ($equipes as $equipe)
@@ -29,12 +29,12 @@
                 </select>
             </div>
             <div class="flex flex-col mb-4">
-                <label class="field-label" for="nom_equipe">Cote equipe 1</label>
-                <input type="float" id="cote-form2" name="cote_equipe1" placeholder="1.0" value="">
+                <label class="field-label" for="cote_equipe">Cote equipe 1</label>
+                <input type="float" class="field" id="cote-form2" name="cote_1" placeholder="1.0" value="">
             </div>
 
             <div class="flex flex-col mb-4">
-                <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="nom_equipe">Equipe 2</label>
+                <label class="field-label" for="nom_equipe">Equipe 2</label>
                 <select id="equipe2" name="equipe2" autocomplete="equipe2"
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option value="">Choissisez le jeu d'abord</option>
@@ -45,7 +45,11 @@
             </div>
             <div class="flex flex-col mb-4">
                 <label class="field-label" for="nom_equipe">Cote equipe 2</label>
-                <input type="float" id="cote-form1" name="cote_equipe2" placeholder="1.0" value="">
+                <input type="float" class="field" id="cote-form1" name="cote_2" placeholder="1.0" value="">
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="field-label" for="cote_equipe">Date du match</label>
+                <input type="datetime-local" name="end-bet" class="field" value="">
             </div>
 
             <button class="block bg-blue-700 hover:bg-blue-500 text-white uppercase text-lg mx-auto p-4 rounded"
@@ -59,7 +63,7 @@
 @push('script')
 <script>
     let jeu=document.querySelector('#jeu')
-    let equipe1=document.querySelector('#equipe1')
+    let equipe1=document.querySelector('#equipe')
     let equipe2=document.querySelector('#equipe2')
     let valeur={ e:{ prev:"", cur:""},
     e2:{prev:"", cur:""} }
@@ -70,9 +74,10 @@
     jeu.addEventListener('change',async e=>{
         if(jeu.value!=""){ 
             equipe1.options[0].text="Choissisez l'equipe 1"
-            equipe2.options[0].text="Choissisez l'equipe 2"
-            equipes=await getList(jeu.value)
-         
+            equipe2.options[0].text="Choissisez l'equipe 2" 
+            console.log(jeu.options[jeu.selectedIndex].text.toLowerCase().replace(/\s+/g, '-'))
+            equipes=await getList(jeu.options[jeu.selectedIndex].text.toLowerCase().replace(/\s+/g, '-'))
+        
             updateList(equipes)
         }
     })
@@ -104,7 +109,7 @@
             option.disabled=false;
            }
        }
-      console.log(valeur)
+   
    })
    equipe2.addEventListener('change',async e=>{ 
    
@@ -119,7 +124,7 @@
             option.disabled=false;
            }
        }
-       console.log(valeur)
+
     })
 
    async function getList(slug){
