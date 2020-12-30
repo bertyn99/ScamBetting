@@ -13,6 +13,13 @@
                     <li class="text-white">Rainbow 6 Siege</li>
                 </ul>
             </div>
+            <div class="sm:w-1/2 h-auto">
+                <div class="text-white mb-2">Infos Légales</div>
+                <ul class="list-reset leading-normal">
+                    <li class="text-white"><a href="{{url('mention-legales')}}"> Mentions legales</a></li>
+                    <li class="text-white"><a href="{{url('cgu')}}">C.G.U</a></li>
+                </ul>
+            </div>
 
             <div class="sm:w-1/2 h-auto sm:mt-0 mt-8">
                 <div class="text-white mb-2">Newsletter</div>
