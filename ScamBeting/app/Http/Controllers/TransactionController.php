@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
@@ -18,17 +19,29 @@ class TransactionController extends Controller
         $intent = PaymentIntent::create([
             'amount' => $montant,
             'currency' => 'usd',
+            'metadata' => [
+                'userId' => Auth::user()->id
+            ]
         ]);
 
         $clientSecret = Arr::get($intent, 'client_secret');
 
-        return view('transaction.index', compact('clientSecret', "montant"));
+        return view('transaction.index', compact('clientSecret', 'montant'));
     }
 
     public function index()
     {
     }
-    public function store()
+    public function store(Request $request)
     {
+
+        $data = $request->json()->all();
+
+        return $data['paymentIntent'];
+    }
+
+    public function reussi()
+    {
+        return view('transaction.thx');
     }
 }
