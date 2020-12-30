@@ -74,8 +74,8 @@
                                     class="btn-user focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                     id="user-menu" aria-haspopup="true">
                                     <span class="sr-only">Open user menu</span>
-                                    <img class="avatar"
-                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    <img class="avatar bg-white"
+                                        src="https://img.icons8.com/cotton/64/000000/gender-neutral-user--v3.png"
                                         alt="">
                                 </button>
                             </div>
@@ -92,19 +92,21 @@
                             <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5"
                                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu" hidden>
                                 @if(Auth::user()->isAdmin == 1)
-                                <a href="{{url('admin')}}" class="block px-4 py-2 text-sm text-white hover:bg-gray-100"
+                                <a href="{{url('admin')}}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     role="menuitem">Dashboard</a>
 
                                 @else
-                                <a href="{{url('home')}}" class="block px-4 py-2 text-sm text-white hover:bg-gray-100"
+                                <a href="{{url('profile')}}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     role="menuitem">Profile</a>
                                 @endif
-                                <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100"
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     role="menuitem">Parametre</a>
-                                {{--  <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100" role="menuitem">{{ Auth::user()->name }}
+                                {{--  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{{ Auth::user()->name }}
                                 {{ Auth::user()->isAdmin }}</a> --}}
                                 <a href="{{ route('logout') }}"
-                                    class="block px-4 py-2 text-sm text-white hover:bg-gray-100" role="menuitem"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                     {{ csrf_field() }}
