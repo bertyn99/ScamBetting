@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        'stripe/*', 'scam-beting.herokuapp.com/*',
+        'stripe/*', 'https://scam-beting.herokuapp.com/*',
     ];
 }
