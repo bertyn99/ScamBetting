@@ -6,6 +6,7 @@ use \App\Http\Controllers\AdminController;
 use \App\Http\Controllers\EquipeController;
 use \App\Http\Controllers\JeuController;
 use \App\Http\Controllers\ParisController;
+use \App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,8 +58,12 @@ Route::put('admin/paris/{id}/update', [ParisController::class, 'update'])->middl
 Route::get('admin/paris/{id}/delete', [ParisController::class, 'destroy'])->middleware('admin')->name("bet.destroy");
 
 #Crud Balance
-Route::get('profile/depot', [HomeController::class, 'index'])->name('profile.depot');
-Route::get('profile/retrait', [HomeController::class, 'index'])->name('profile.retrait');
+Route::get('profile/depot', [HomeController::class, 'deposit'])->name('profile.depot');
+Route::get('profile/retrait', [HomeController::class, 'withdraw'])->name('profile.retrait');
+
+#transaction
+Route::post('checkout/depot', [TransactionController::class, 'deposit'])->name('checkout.depot');
+
 
 Route::get('profile', [HomeController::class, 'index'])->name('profile.index');
 

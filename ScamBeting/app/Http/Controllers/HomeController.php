@@ -36,6 +36,7 @@ class HomeController extends Controller
 
     public function deposit()
     {
+        return view('user.depot');
     }
     public function withdraw(Request $request)
     {
@@ -43,6 +44,6 @@ class HomeController extends Controller
         if ($request->amount > 0 && $request->amount <= auth()->user()->balance) {
             auth()->user()->balance -= $request->amount;
         }
-        return redirect()->route('dashboard.index');
+        return redirect()->route('profile.index')->with("Vous n\' avez rien a retirer");
     }
 }
