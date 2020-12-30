@@ -30,3 +30,6 @@
 .field-group {
   @apply flex flex-col;
 }
+.alert{
+  @apply flex items-center bg-red-300 text-white text-sm font-extrabold px-2 py-3 rounded border
+}
