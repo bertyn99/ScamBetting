@@ -45,16 +45,16 @@
 
                             </div>
                             <div class="flex justify-center p-4 ">
-                                <button
-                                    class="bg-blue-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-lg px-4 py-2 rounded outline-none focus:outline-none sm:mr-4 mb-1">Retrait</button>
-                                <button
-                                    class="bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-lg px-4 py-2 rounded outline-none focus:outline-none sm:mr-4 mb-1">Depot</button>
+                                <a href="{{route('profile.retrait')}}"><button
+                                        class="bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-lg px-4 py-2 rounded outline-none focus:outline-none sm:mr-4 mb-1">Retrait</button></a>
+                                <a href="{{route('profile.depot')}}"> <button
+                                        class="bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-lg px-4 py-2 rounded outline-none focus:outline-none sm:mr-4 mb-1">Depot</button></a>
                             </div>
                         </div>
 
-
                     </div>
-
+                    @include('user.userbet')
+                    @include('user.transaction')
                     {{-- 
                     
                         
