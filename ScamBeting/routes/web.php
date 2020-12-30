@@ -61,3 +61,11 @@ Route::get('profile/depot', [HomeController::class, 'index'])->name('profile.dep
 Route::get('profile/retrait', [HomeController::class, 'index'])->name('profile.retrait');
 
 Route::get('profile', [HomeController::class, 'index'])->name('profile.index');
+
+#pages legales
+Route::get('cgu', function () {
+    return view('layouts.legales.cgu');
+});
+Route::get('mention-legales', function () {
+    return view('layouts.legales.mention');
+});

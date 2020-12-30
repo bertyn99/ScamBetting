@@ -39,7 +39,8 @@
 
         @include('layouts.paris.bet')
         @else
-
+        @yield('cgu')
+        @yield('mention')
         @yield('content')
         @endif
 
