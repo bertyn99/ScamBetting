@@ -22,6 +22,7 @@
                     @endforeach
                 </select>
             </div>
+
             <div class="flex flex-col mb-4">
                 <label class="field-label" for="nom_equipe">Equipe 1</label>
                 <select id="equipe" name="equipe" autocomplete="equipe"
@@ -38,7 +39,7 @@
             </div>
 
             <div class="flex flex-col mb-4">
-                <label class="field-label" for="nom_equipe">Equipe 2</label>
+                <label class="field-label" for="nom_equipe2">Equipe 2</label>
                 <select id="equipe2" name="equipe2" autocomplete="equipe2"
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option value="">Choissisez le jeu d'abord</option>
@@ -48,11 +49,11 @@
                 </select>
             </div>
             <div class="flex flex-col mb-4">
-                <label class="field-label" for="nom_equipe">Cote equipe 2</label>
+                <label class="field-label" for="cote_equipe2">Cote equipe 2</label>
                 <input type="float" class="field" id="cote-form1" name="cote_2" placeholder="1.0" value="">
             </div>
             <div class="flex flex-col mb-4">
-                <label class="field-label" for="cote_equipe">Date du match</label>
+                <label class="field-label" for="date_match">Date du match</label>
                 <input type="datetime-local" name="end-bet" class="field" value="">
             </div>
 
@@ -67,6 +68,7 @@
 @push('script')
 <script>
     let jeu=document.querySelector('#jeu')
+  
     let equipe1=document.querySelector('#equipe')
     let equipe2=document.querySelector('#equipe2')
     let valeur={ e:{ prev:"", cur:""},
@@ -92,11 +94,11 @@
          equipe2.remove(1); 
          }
        list.forEach((elem,i) => {
-           equipe1[i+1]= new Option(elem.nom_equipe,elem.nom_equipe)
-           equipe2[i+1]= new Option(elem.nom_equipe,elem.nom_equipe)
+           equipe1[i+1]= new Option(elem.nom_equipe,elem.id)
+           equipe2[i+1]= new Option(elem.nom_equipe,elem.id)
        }); 
        
-        valeur.e.cur=equipe2.value;
+        valeur.e.cur=equipe1.value;
         valeur.e2.cur=equipe2.value
    }
    equipe1.addEventListener('change',async e=>{
@@ -113,7 +115,7 @@
             option.disabled=false;
            }
        }
-   
+       
    })
    equipe2.addEventListener('change',async e=>{ 
    
@@ -121,10 +123,10 @@
          valeur.e2.cur=equipe2.value
 
     for (const option of equipe1) {
-           if(option.value==valeur.e.cur){
+           if(option.value==valeur.e2.cur){
                 option.disabled=true;
            }
-           if(option.value==valeur.e.prev){
+           if(option.value==valeur.e2.prev){
             option.disabled=false;
            }
        }
