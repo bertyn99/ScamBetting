@@ -19,4 +19,13 @@ class UserBet extends Model
         'mise',
         'status',
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    public function paris()
+    {
+        return $this->belongsTo(Paris::class, 'id_paris');
+    }
 }
