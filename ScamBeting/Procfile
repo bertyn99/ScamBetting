@@ -1,11 +1,1 @@
-web: vendor/bin/heroku-php-nginx public/
-nginx conf : 
-location / {
-# try to serve file directly, fallback to rewrite
-try_files $uri @rewriteapp;
-}
-
-location @rewriteapp {
-# rewrite all to index.php
-rewrite ^(.*)$ /index.php$1 last;
-}
+web: vendor/bin/heroku-php-apache2 public/
