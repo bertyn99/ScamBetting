@@ -1,4 +1,4 @@
-web: $(composer config bin-dir)/heroku-php-nginx -C nginx.conf public/
+web: vendor/bin/heroku-php-nginx -C nginx.conf public/
 nginx conf : 
 location / {
 # try to serve file directly, fallback to rewrite
