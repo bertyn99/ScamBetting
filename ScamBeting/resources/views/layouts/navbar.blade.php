@@ -68,8 +68,12 @@
                             href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endif
                         @else
-                        <div class="ml-3 relative">
-                            <div>
+                        <div class="ml-3 relative ">
+                            <div class="flex flex-row ">
+                                <div class="flex flex-col mr-3 text-center">
+                                    <span class="font-bold text-gray-300 text-md">{{ Auth::user()->name }}</span>
+                                    <span class="font-bold text-gray-100 text-md">{{ Auth::user()->balance }} €</span>
+                                </div>
                                 <button
                                     class="btn-user focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                     id="user-menu" aria-haspopup="true">

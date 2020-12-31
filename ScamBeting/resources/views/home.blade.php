@@ -29,13 +29,13 @@
                             <div class="flex flex-row justify-center pl-4 py-4 lg:pt-4 pt-8">
                                 <div class=" p-3 text-center">
                                     <span
-                                        class="text-xl font-bold block uppercase tracking-wide text-gray-700">22</span><span
+                                        class="text-xl font-bold block uppercase tracking-wide text-gray-700">0</span><span
                                         class="text-sm text-gray-500">Gain/Perte</span>
                                 </div>
                                 <div class="mx-6 p-3 text-center">
                                     <span
-                                        class="text-xl font-bold block uppercase tracking-wide text-gray-700">10</span><span
-                                        class="text-sm text-gray-500">Balance</span>
+                                        class="text-xl font-bold block uppercase tracking-wide text-gray-700">{{ Auth::user()->balance }}
+                                        €</span><span class="text-sm text-gray-500">Balance</span>
                                 </div>
                                 <div class=" p-3 text-center">
                                     <span
