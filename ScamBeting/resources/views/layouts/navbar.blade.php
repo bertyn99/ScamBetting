@@ -138,16 +138,16 @@
 
             <div class="mt-3 py-3 -mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="{{route('home.jeu',"Heartsone"->slug('-'))}}">Heartsone</a>
+                    href="{{route('home.jeu',"heartsone")}}">Heartsone</a>
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="{{route('home.jeu',"counter-strike"->slug('-'))}}">Counter-Strike</a>
+                    href="{{route('home.jeu',"counter-strike")}}">Counter-Strike</a>
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="{{route('home.jeu',"league of legends"->slug('-'))}}">League
+                    href="{{route('home.jeu',"league-of-legends")}}">League
                     of Legends</a>
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="{{route('home.jeu',"valorant"->slug('-'))}}">Valorant</a>
+                    href="{{route('home.jeu',"valorant")}}">Valorant</a>
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="{{route('home.jeu',"rainbow 6 riege"->slug('-'))}}">Rainbow 6 Siege</a>
+                    href="{{route('home.jeu',"rainbow-6-siege")}}">Rainbow 6 Siege</a>
 
             </div>
         </div>
