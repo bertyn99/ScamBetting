@@ -22,8 +22,8 @@ class Paris extends Model
     {
         return $this->belongsTo(Jeu::class, 'id_jeu');
     }
-    public function equipe()
+    public function equipes()
     {
-        return $this->belongsToMany(Equipe::class);
+        return $this->belongsToMany(Equipe::class)->withPivot('cote');
     }
 }
