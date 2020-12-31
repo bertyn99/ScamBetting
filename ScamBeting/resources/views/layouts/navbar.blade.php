@@ -138,15 +138,16 @@
 
             <div class="mt-3 py-3 -mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="#">Heartsone</a>
+                    href="{{route('home.jeu',"Heartsone"->slug('-'))}}">Heartsone</a>
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="#">Counter-Strike</a>
-                <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0" href="#">League
+                    href="{{route('home.jeu',"counter-strike"->slug('-'))}}">Counter-Strike</a>
+                <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
+                    href="{{route('home.jeu',"league of legends"->slug('-'))}}">League
                     of Legends</a>
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="#">Valorant</a>
+                    href="{{route('home.jeu',"valorant"->slug('-'))}}">Valorant</a>
                 <a class="text-sm text-white leading-5 hover:text-blue-600 hover:underline mx-4 md:my-0"
-                    href="#">Rainbow 6 Siege</a>
+                    href="{{route('home.jeu',"rainbow 6 riege"->slug('-'))}}">Rainbow 6 Siege</a>
 
             </div>
         </div>
