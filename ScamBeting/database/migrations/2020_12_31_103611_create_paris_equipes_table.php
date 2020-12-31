@@ -15,6 +15,7 @@ class CreateParisEquipesTable extends Migration
     {
         Schema::create('paris_equipe', function (Blueprint $table) {
             $table->id();
+            $table->float('cote', 4, 2);
             $table->foreignId('equipe_id');
             $table->foreign('equipe_id')
                 ->references('id')

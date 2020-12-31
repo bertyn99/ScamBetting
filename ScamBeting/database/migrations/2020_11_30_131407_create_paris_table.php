@@ -17,8 +17,6 @@ class CreateParisTable extends Migration
             $table->id();
             $table->foreignId('id_jeu');
             $table->dateTime('endbet');
-            $table->float('cote_1', 4, 2);
-            $table->float('cote_2', 4, 2);
             $table->timestamps();
             $table->foreign('id_jeu')->references('id')->on('jeu')->onDelete('restrict')
                 ->onUpdate('restrict');
