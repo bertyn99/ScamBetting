@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Equipe;
 use App\Models\ScamBetting;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {

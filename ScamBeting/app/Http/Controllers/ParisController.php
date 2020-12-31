@@ -49,7 +49,8 @@ class ParisController extends Controller
         $jeux = Jeu::all();
         $equipes = Equipe::all();
         $bets = Paris::all();
-        return view('admin.paris.create', compact('bets', 'jeux', 'equipes'));
+        $bets->with('equipes')->get();
+        return view('admin.paris.create', compact('bets', 'jeux'));
     }
 
     /**
@@ -60,16 +61,18 @@ class ParisController extends Controller
      */
     public function store(Request $request)
     {
-
+        //creéation du paris
         $bet = new Paris();
         $bet->id_jeu = $request->jeu;
-        $bet->equipes()->attach($request->equipe);
-        $bet->equipes()->attach($request->equipe2);
-        $bet->cote_1 = $request->get('cote_1');
-        $bet->cote_2 = $request->get('cote_2');
         $bet->endbet = $request->get('end-bet');
-        dd($request);
         $bet->save();
+
+        //attacher le paris avec la table paris_equipe avec la cote de l'equipe1
+        $bet->equipes()->attach($request->equipe, array('cote' => $request->get('cote_1')));
+
+        //attacher le paris avec la table paris_equipe avec la cote de l'equipe2
+        $bet->equipes()->attach($request->equipe2, array('cote' => $request->get('cote_2')));
+
         return redirect()->route('bet.index');
     }
 
