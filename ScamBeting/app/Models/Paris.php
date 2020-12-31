@@ -24,6 +24,6 @@ class Paris extends Model
     }
     public function equipes()
     {
-        return $this->belongsToMany(Equipe::class)->withPivot('cote');
+        return $this->belongsToMany(Equipe::class, 'paris_equipe')->withPivot('cote');
     }
 }
