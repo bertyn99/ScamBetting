@@ -63,8 +63,8 @@ class ParisController extends Controller
 
         $bet = new Paris();
         $bet->id_jeu = $request->jeu;
-        $bet->id_equipe_1 = $request->equipe;
-        $bet->id_equipe_2 = $request->equipe2;
+        $bet->equipes()->attach($request->equipe);
+        $bet->equipes()->attach($request->equipe2);
         $bet->cote_1 = $request->get('cote_1');
         $bet->cote_2 = $request->get('cote_2');
         $bet->endbet = $request->get('end-bet');
