@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
+use App\Models\{User, Transaction};
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
@@ -36,7 +38,21 @@ class TransactionController extends Controller
     {
 
         $data = $request->json()->all();
+        $transaction = new Transaction();
+        $transaction->payment_intent_id = $data['paymentIntent']['id'];
+        $transaction->amount = $data['paymentIntent']['amount'];
+        $transaction->transaction_date = (new DateTime())
+            ->setTimestamp($data['paymentIntent']['created'])
+            ->format('Y-m-d H:i:s');
+        $transaction->user_id = Auth::user()->id;
 
+        if ($data['paymentIntent']['status'] === 'succeeded') {
+            $transaction->status = "réussi";
+            $user = User::whereId(Auth::user()->id)->get();
+            $user->balance = $user->balance + $data['paymentIntent']['amount'];
+            $user->save();
+        }
+        $transaction->save();
         return $data['paymentIntent'];
     }
 
